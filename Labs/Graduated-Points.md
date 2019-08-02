@@ -76,6 +76,9 @@ Next, select the 'Niagara' district polygon and select __+ Add Property__ locate
 
 Repeat these steps for each council district. 
 
+Once you are finished, select __save__ and return to the [dataset editor homepage](https://studio.mapbox.com/datasets/).
+
+Our final map for this tutorial is going to be a graduated point map of rodent incidence rate by council district. In order to creat this map, we will need to create centroid points for each of the polgyon features. We will use QGIS to create the centroid points
 
 
 
