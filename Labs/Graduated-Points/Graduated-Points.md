@@ -11,7 +11,7 @@ In this tutorial you will:
 * [Create a style](https://docs.mapbox.com/help/how-mapbox-works/map-design/#how-map-styles-work) for a basemap.
 * [Add data](https://www.mapbox.com/help/uploads/) to a style
 * [Manage and edit layers](https://www.mapbox.com/studio-manual/reference/styles/#style-editor) in your style
-* Embed a map into a web page
+* Create a web map 
 
 ## Software requirements
 
@@ -190,4 +190,8 @@ Now that you've got your map looking good, it's time to publish! Click the Publi
 Hooray! Your style is now published! If you go back to your Styles page, you will see your new style at the top of the list.
 
 You can use your ‘Share URL’ to open your style in a new browser tab and share it with collaborators for review.
+
+## Create a web map 
+
+Now that we have edited our layers and created a style, let's 
 
