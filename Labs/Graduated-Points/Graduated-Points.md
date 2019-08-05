@@ -1,4 +1,4 @@
-<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Logo.png" title = "Mapbox logo">
+<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Logo.png" title = "Mapbox logo">
 
 ## Mapping rodent incidence by council district 
 
@@ -35,7 +35,7 @@ A dataset is an editable collection of [GeoJSON](https://www.mapbox.com/help/def
 
 To get started with this tutorial, you will need to go to the [dataset editor](https://studio.mapbox.com/datasets/) in Mapbox Studio and upload your District Council data. 
 
-![DatasetUpload](Images/Dataset_Upload.png)
+<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/dataset-upload.gif">
 
 On your Datasets page, click the __Upload dataset__ button and select the District Council GeoJSON from your local drive. 
 
