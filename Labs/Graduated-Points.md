@@ -21,8 +21,9 @@ In this tutorial you will:
 * GitHub Account
 
 ## Data
-[Council District GeoJSON](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Data/Council%20Districts.geojson)
-[Rodent Incident Table](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Data/Rodent_Incidence.csv)
+* [Council District GeoJSON](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Data/Council%20Districts.geojson)
+
+* [Rodent Incident Table](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Data/Rodent_Incidence.csv)
 
 ## Uploading and editing datasets to Mapbox
 
