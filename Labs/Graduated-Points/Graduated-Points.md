@@ -199,5 +199,43 @@ You can use your ‘Share URL’ to open your style in a new browser tab and sha
 
 ## Create a web map 
 
-Now that we have edited our layers and created a style, let's 
+Now that we have edited our layers and created a style, let's create a web map! 
 
+For this part of the lesson, we will be using a program called JSFiddle. You can sign up for a free acount at: https://jsfiddle.net/
+
+JSFiddle is a simple tool for building and testing code for web development. We recommend using JSFiddle in a Chrome browser
+
+For simplicity, we recommend that you change the editor layout settings in JSFiddle to display by ‘tabs’.
+
+Initialize your map by copying the following code into the HTML tab of your JSFiddle:
+
+<p align= "center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Code_Snippet1.png">
+</p>
+
+
+For the next step you will need a [Mapbox access token](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) and your [style ID](https://docs.mapbox.com/help/glossary/style-id/). 
+
+<p align = "center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Access_Token.png">
+</p>
+
+<p align = "center">
+<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Style_ID.gif">
+</p>
+
+Copy the following code below the closing </head> tag. We will need to edit a few lines of code in order to view our graduated point map properly. 
+
+<p align = "center">
+<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Code_Snippet2.png">
+</p>
+
+First, let's add our style id to the map variable. Edit the line of code that has the comment 'insert stylesheet location'.
+
+Next, we want to center our map onto Buffalo, New York. Locate the line of code that is telling the map where to center the view. Try changing the center location by picking a new coordinate using http://geojson.io/ (or looking at the bottom of the right-hand panel in the Mapbox Studio style editor). Change the coordinates in your code and run your changes.
+
+Change the zoom level to 11.
+
+Click ‘Run’ to see the changes to your map. 
+
+Save your JSFiddle. 
