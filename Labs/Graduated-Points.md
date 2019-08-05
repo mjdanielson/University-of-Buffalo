@@ -21,7 +21,8 @@ In this tutorial you will:
 * GitHub Account
 
 ## Data
-
+[Council District GeoJSON](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Data/Council%20Districts.geojson)
+[Rodent Incident Table](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Data/Rodent_Incidence.csv)
 
 ## Uploading and editing datasets to Mapbox
 
@@ -66,6 +67,7 @@ You should now have a single polygon feature for each of the council districts. 
 | University       | 1596           |
 
 
+
 Select the 'North' district polygon and select __+ Add Property__ located under the properties panel on the left side of your screen. Add a new property field called __Incidence__ and set the value to 1912 (same as the table above). Select __Confirm__ when you have made this changes. 
 
 ![Incidence](Images/incidence.png)
@@ -78,7 +80,28 @@ Repeat these steps for each council district.
 
 Once you are finished, select __save__ and return to the [dataset editor homepage](https://studio.mapbox.com/datasets/).
 
-Our final map for this tutorial is going to be a graduated point map of rodent incidence rate by council district. In order to creat this map, we will need to create centroid points for each of the polgyon features. We will use QGIS to create the centroid points
+Our final map for this tutorial is going to be a graduated point map of rodent incidence rates by council district. In order to creat this map, we will need to create centroid points for each of the polygon features. We will use QGIS to create the centroid points. 
+
+Download your edited dataset as a GeoJSON by clicking on the ![options | 75%](Images/Symbol.png) button and selecting download. 
+
+![Dataset Download](Images/Dataset_Download.png)
+
+Open QGIS and add the Council District GeoJSON that you just downloaded as a vector layer to your map. 
+
+Use the __Processing Toolbox__ search bar to find the Vector geometry __Centroids__ tool. This tool creates a new point layer, with points representing the centroid of the geometries in an input layer. Make sure that your __Council_Districts__ layer is selected as the input layer and hit __run__.
+
+<p align = "center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Centroid_Tool.png" width="754" height="454" title="QGIS">
+</p>
+
+Right click on the layer and select __Export__ --> __Save Feature As__ and export your file as a GeoJSON. 
+
+We have now successfully created a point feature from our polygon file! There is still one more pre-processing step that we need to do before we can style our data in Mapbox Studio. A common error that occurs when uploading GeoJSON data to Mapbox is that the GeoJSON contains an old-style CRS attribute. To prevent this error, open your GeoJSON in a text editor (for this example, we will be using Atom). Delete the CRS attribute from your code and save your edits. For more information about common data uploading errors check out this helpful [documentation](https://docs.mapbox.com/help/troubleshooting/uploads/).
+
+<p align = "center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Text_Editing.png" title="Text Editing">
+</p>
+
 
 
 
