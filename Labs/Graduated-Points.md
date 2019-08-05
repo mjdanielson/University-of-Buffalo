@@ -116,14 +116,65 @@ First, we will learn how to create a tileset by uploading data to the [tileset e
   </p>
 
   
-Next, we will create a tileset from an existing dataset. Again, navigate to the top of the tileset editor page and select <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Tileset.png" width="82" height="26" title="QGIS">. Select __Create from Dataset__ and select your __Council Districts___ dataset that we created earlier in this lab.  Select __Export Data__ --> __Export as a new tilesest__ --> __Export__.
+Next, we will create a tileset from an existing dataset. Again, navigate to the top of the tileset editor page and select <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Tileset.png" width="82" height="26" title="tileset_button">. Select __Create from Dataset__ and select your __Council Districts___ dataset that we created earlier in this lab.  Select __Export Data__ --> __Export as a new tilesest__ --> __Export__.
 
 
  <p align= "center">
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Export_Tileset.png" title="Tileset">
   </p>
 
+
+When you upload vector data to your Mapbox account, our servers convert it to a [vector tileset](https://docs.mapbox.com/help/glossary/tileset/) so it can be rendered quickly and efficiently in the Mapbox Studio style editor and with Mapbox GL JS. The tileset information page shows some useful information about the tileset that was created from your uploaded data. Feel free to explore the information page for each of your new tilesets. 
+
+
+  ## Create a style for a basemap
   
- 
+After you've inspected your data, it's time to create a new style so you can put it on the map! Go to your [Styles page](https://studio.mapbox.com/). Click the <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/New_Style.png" width="82" height="26" title="New Style"> button. Find the Basic Template style and click <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Customize_Light.png" width="82" height="26" title="Customize Style">.
+
+Excellent! Welcome to the Mapbox Studio style editor. This is where you will create your map style!
+
+Rename the style so that you can find it later. Click into the title field in the upper left side of the screen to change the title from Basic Template to __Graduated_Points__.  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/New_Style.png" width="82" height="26" title="New Style"> button. Find the Basic Template style and click 
+
+<p align="center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Rename.png" title="Rename"> 
+</p>
+
+_You can always refer to the [Mapbox Studio Manual](https://www.mapbox.com/studio-manual/reference/styles/) for more information on getting started._
+
+To add and style the council district data, you will need to add a new layer to the map. At the top of the layer panel, click <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Add_Layer.png" width="82" height="26" title="Add Layer">.
+
+The editor is now showing your map in “x-ray mode.” X-ray mode shows all the data in the sources added to the style, regardless of whether there is a layer to style it.
+
+In the New layer panel, look in the list of Data sources for the __Council_Districts_Point__ source. Click the tileset and then select the source layer as the source for this new style layer.
+
+The default Basic map view is not centered on the United States. Mapbox Studio recognizes that the data you have uploaded is focused on a different location, so it displays the message "This tileset isn't available from your map view." Click __Go to data__, and the map view will refocus on the United States. Zoom to your layer (Buffalo, New York). 
+
+Each layer in Studio can be styled individually by clicking on the name of the layer in the Layer list. There are several layer types to choose from. Each layer type has a unique set of layer properties that can be specified. There are a few options for specifying property values. You can pick values individually, based on a data attribute, based on the zoom level, or the value of another property. For more information on layer types and their styling rules check out this [reference guide](https://docs.mapbox.com/studio-manual/reference/styles/).
+
+Click the Style tab and the map will switch back to style mode displaying your new layer. You will see the point data on the map with a default style (black with 100% opacity). Change the name of your data layer to 'Rodent Incidents' and select __radius__ ,  __style across a data range__ and then select the __incidence #__ field.
+
+<p align='center'>
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Graduated_Points_Edits.png" title = "styling across a data range">
+</p>
+  
+In the Mapbox Studio style editor, you can assign a circle radius size based on a numerical attribute field - in this example we will use our rodent incidence rate to assign radius size. Set the __rate of change__ to linear and the __incidence rate__ of 1556 to a __5x__ radius. Lastly, set the __incidence rate__ of 2344 to __10x__ radius. 
+
+<p align ='center'>
+           <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Radius_Size.png" title = 'styling across a data range 2'>
+</p>
+
+Play around with some other features for styling this layer. Try changing the color of your points to #8a0505.
+
+Once you are satisfied with how your point data looks, let's add some geographical context to your style by adding a boundary layer for your council districts. To add and style the boundary data, you will need to add a new layer to the map. At the top of the layer panel, click <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Add_Layer.png" width="82" height="26" title="Add Layer">. Navigate and select your __Council Districts__ polygon layer. 
+
+<p align = "center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Council_DIstricts_Layer.png" title = 'council district boundary layer'>
+</p>
+
+Change the color of the layer to 'no color' and adjust the opacity to 75%. 
+
+<p align = "center">
+  <img src = "https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Boundary_Layer.png" title = 'boundary layer settings'>
+</p>
 
 
