@@ -39,17 +39,15 @@ To get started with this tutorial, you will need to go to the [dataset editor](h
 
 On your Datasets page, click the __Upload dataset__ button and select the District Council GeoJSON from your local drive. 
 
-![DatasetUpload](Images/dataset-upload.gif)
-
 Explore your dataset by clicking on different polygons. What property values to see on the left side of the screen? 
 
-![DatasetExplorer](Images/dataset_explore.gif)
-
+<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/dataset_explore.gif">
 
 Notice that there are multiple polygons with the same name - there are two polygons for district council 'North', two for 'Niagara' amd 4 polygon features for 'Lovejoy'. Before we continue with this exercise, we need to merge our polygon features. Let's start by selecting both of the 'North' district council polygons. Hold down the shift button to select both features at once. With both features selected, click on the __Combine features into multifeature__ button.
 
-
-![Multifeatures](Images/Multifeatures.png)
+<p align="center">
+  <img src= "https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Multifeatures.png">
+  </p>
 
 Repeat the steps above for both the 'Niagara' and 'Lovejoy' districts (hint: one of the polygons for the Lovejoy district is very small, you may have to zoom in to see it). 
 
@@ -71,11 +69,17 @@ You should now have a single polygon feature for each of the council districts. 
 
 Select the 'North' district polygon and select __+ Add Property__ located under the properties panel on the left side of your screen. Add a new property field called __Incidence__ and set the value to 1912 (same as the table above). Select __Confirm__ when you have made this changes. 
 
-![Incidence](Images/incidence.png)
+<p align = "center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/incidence.png">
+</p>
+
 
 Next, select the 'Niagara' district polygon and select __+ Add Property__ located under the properties panel on the left side of your screen. Add a new property field called __Incidence__ (you can set the field name by selecting the 'available field names' pop up) and set the value to 2265 (same as the table above). Select __Confirm__ when you have made this changes. 
 
-![Available_Fields](Images/available_fields.png)
+<p align = "center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/available_fields.png">
+</p>
+
 
 Repeat these steps for each council district. 
 
