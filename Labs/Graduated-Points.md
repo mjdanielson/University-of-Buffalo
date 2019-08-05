@@ -86,6 +86,8 @@ Download your edited dataset as a GeoJSON by clicking on the ![options | 75%](Im
 
 ![Dataset Download](Images/Dataset_Download.png)
 
+## Create centroid points in QGIS
+
 Open QGIS and add the Council District GeoJSON that you just downloaded as a vector layer to your map. 
 
 Use the __Processing Toolbox__ search bar to find the Vector geometry __Centroids__ tool. This tool creates a new point layer, with points representing the centroid of the geometries in an input layer. Make sure that your __Council_Districts__ layer is selected as the input layer and hit __run__.
@@ -102,6 +104,26 @@ We have now successfully created a point feature from our polygon file! There is
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Text_Editing.png" title="Text Editing">
 </p>
 
+## Upload data as a tileset
 
+In this section, we are going to learn two different ways to create a tileset. 
+
+First, we will learn how to create a tileset by uploading data to the [tileset editor](https://studio.mapbox.com/tilesets/).  At the top of the tileset editor page, select
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Tileset.png" width="82" height="26" title="QGIS">. Select __Upload File__ and __Select a file__ and navigate to the file containing your council district centroid GeoJSON and select __Confirm__. 
+
+  <p align= 'center'>
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Upload_File.png" title="Tileset1">
+  </p>
+
+  
+Next, we will create a tileset from an existing dataset. Again, navigate to the top of the tileset editor page and select <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Tileset.png" width="82" height="26" title="QGIS">. Select __Create from Dataset__ and select your __Council Districts___ dataset that we created earlier in this lab.  Select __Export Data__ --> __Export as a new tilesest__ --> __Export__.
+
+
+ <p align= "center">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Export_Tileset.png" title="Tileset">
+  </p>
+
+  
+ 
 
 
