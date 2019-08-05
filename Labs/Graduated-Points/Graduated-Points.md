@@ -1,4 +1,4 @@
-![logo](Images/Logo.png)
+<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Logo.png" title = "Mapbox logo">
 
 ## Mapping rodent incidence by council district 
 
