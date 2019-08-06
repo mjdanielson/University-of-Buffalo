@@ -209,10 +209,22 @@ For simplicity, we recommend that you change the editor layout settings in JSFid
 
 Initialize your map by copying the following code into the HTML tab of your JSFiddle:
 
-<p align= "center">
-  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Code_Snippet1.png">
-</p>
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Display a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
 
+```
 
 For the next step you will need a [Mapbox access token](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) and your [style ID](https://docs.mapbox.com/help/glossary/style-id/). 
 
@@ -226,15 +238,40 @@ For the next step you will need a [Mapbox access token](https://docs.mapbox.com/
 
 Copy the following code below the closing </head> tag. We will need to edit a few lines of code in order to view our graduated point map properly. 
 
-<p align = "center">
-<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Code_Snippet2.png">
-</p>
+```
+<body>
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWpkYW5pZWxzb24iLCJhIjoiY2p2bzFlbnZ5MW5pbTN5cGJ2YWp2MW9vaiJ9.kAaZq3iyJwvrMLK7XDs_qw';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/username', // insert stylesheet location
+    center: [,], // starting position [lng, lat] - adjust the starting position to be centered on Buffalo, New York 
+    zoom: 3 // starting zoom - change the starting zoom position to 11 
+});
+</script>
+
+</body>
+</html>
+```
 
 First, let's add our style id to the map variable. Edit the line of code that has the comment 'insert stylesheet location'.
 
+```
+style: 'mapbox://styles/username', // insert stylesheet location
+```
+
 Next, we want to center our map onto Buffalo, New York. Locate the line of code that is telling the map where to center the view. Try changing the center location by picking a new coordinate using http://geojson.io/ (or looking at the bottom of the right-hand panel in the Mapbox Studio style editor). Change the coordinates in your code and run your changes.
 
+```
+center: [,], // starting position [lng, lat] - adjust the starting position to be centered on Buffalo, New York 
+```
+
 Change the zoom level to 11.
+
+```
+zoom: 3 // starting zoom - change the starting zoom position to 11 
+```
 
 Click ‘Run’ to see the changes to your map. 
 
