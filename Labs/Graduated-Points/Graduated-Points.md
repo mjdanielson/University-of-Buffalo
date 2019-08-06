@@ -152,6 +152,10 @@ _You can always refer to the [Mapbox Studio Manual](https://www.mapbox.com/studi
 
 To add and style the council district data, you will need to add a new layer to the map. At the top of the layer panel, click <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Add_Layer.png" width="82" height="26" title="Add Layer">.
 
+<p align = "center">
+  <img src = "https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Add_Layer.gif">
+  </p>
+
 The editor is now showing your map in “x-ray mode.” X-ray mode shows all the data in the sources added to the style, regardless of whether there is a layer to style it.
 
 In the New layer panel, look in the list of Data sources for the __Council_Districts_Point__ source. Click the tileset and then select the source layer as the source for this new style layer.
@@ -171,7 +175,7 @@ Click the Style tab and the map will switch back to style mode displaying your n
 In the Mapbox Studio style editor, you can assign a circle radius size based on a numerical attribute field - in this example we will use our rodent incidence rate to assign radius size. Set the __rate of change__ to linear and the __incidence rate__ of 1556 to a __5x__ radius. Lastly, set the __incidence rate__ of 2344 to __10x__ radius. 
 
 <p align ='center'>
-           <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Radius_Size.png" title = 'styling across a data range 2'>
+           <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/File_Name_Styling.gif" title = 'styling across a data range 2'>
 </p>
 
 Play around with some other features for styling this layer. Try changing the color of your points to #8a0505.
