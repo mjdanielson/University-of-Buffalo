@@ -41,7 +41,7 @@ On your Datasets page, click the __Upload dataset__ button and select the Distri
 
 Explore your dataset by clicking on different polygons. What property values to see on the left side of the screen? 
 
-<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/dataset_explore.gif">
+<img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Council_Districts_Select.gif">
 
 Notice that there are multiple polygons with the same name - there are two polygons for district council 'North', two for 'Niagara' amd 4 polygon features for 'Lovejoy'. Before we continue with this exercise, we need to merge our polygon features. Let's start by selecting both of the 'North' district council polygons. Hold down the shift button to select both features at once. With both features selected, click on the __Combine features into multifeature__ button.
 
@@ -119,7 +119,7 @@ First, we will learn how to create a tileset by uploading data to the [tileset e
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Tileset.png" width="82" height="26" title="Tileset Upload">. Select __Upload File__ and __Select a file__ and navigate to the file containing your council district centroid GeoJSON and select __Confirm__. 
 
   <p align= 'center'>
-  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Images/Upload_File.png" title="Tileset1">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/tileset_upload.png" title="Tileset1">
   </p>
 
   
