@@ -116,14 +116,14 @@ We have now successfully created a point feature from our polygon file! There is
 In this section, we are going to learn two different ways to create a tileset. 
 
 First, we will learn how to create a tileset by uploading data to the [tileset editor](https://studio.mapbox.com/tilesets/).  At the top of the tileset editor page, select
-  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Tileset.png" width="82" height="26" title="Tileset Upload">. Select __Upload File__ and __Select a file__ and navigate to the file containing your council district centroid GeoJSON and select __Confirm__. 
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/tilesetbutton.png" width="82" height="26" title="Tileset Upload">. Select __Upload File__ and __Select a file__ and navigate to the file containing your council district centroid GeoJSON and select __Confirm__. 
 
   <p align= 'center'>
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/tileset_upload.png" title="Tileset1">
   </p>
 
   
-Next, we will create a tileset from an existing dataset. Again, navigate to the top of the tileset editor page and select <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Tileset.png" width="82" height="26" title="tileset_button">. Select __Create from Dataset__ and select your __Council Districts___ dataset that we created earlier in this lab.  Select __Export Data__ --> __Export as a new tilesest__ --> __Export__.
+Next, we will create a tileset from an existing dataset. Again, navigate to the top of the tileset editor page and select <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/tilesetbutton.png" width="82" height="26" title="tileset_button">. Select __Create from Dataset__ and select your __Council Districts___ dataset that we created earlier in this lab.  Select __Export Data__ --> __Export as a new tilesest__ --> __Export__.
 
 
  <p align= "center">
