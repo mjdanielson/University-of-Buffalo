@@ -169,13 +169,13 @@ Each layer in Studio can be styled individually by clicking on the name of the l
 Click the Style tab and the map will switch back to style mode displaying your new layer. You will see the point data on the map with a default style (black with 100% opacity). Change the name of your data layer to 'Rodent Incidents' and select __radius__ ,  __style across a data range__ and then select the __incidence #__ field.
 
 <p align='center'>
-  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Graduated_Points_Edits.png" title = "styling across a data range">
+  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/File_Name_Styling.gif" title = "styling across a data range">
 </p>
   
 In the Mapbox Studio style editor, you can assign a circle radius size based on a numerical attribute field - in this example we will use our rodent incidence rate to assign radius size. Set the __rate of change__ to linear and the __incidence rate__ of 1556 to a __5x__ radius. Lastly, set the __incidence rate__ of 2344 to __10x__ radius. 
 
 <p align ='center'>
-           <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/File_Name_Styling.gif" title = 'styling across a data range 2'>
+           <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Radius_Size.png" title = 'styling across a data range 2'>
 </p>
 
 Play around with some other features for styling this layer. Try changing the color of your points to #8a0505.
