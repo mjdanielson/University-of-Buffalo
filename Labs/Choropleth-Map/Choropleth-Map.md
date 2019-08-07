@@ -19,6 +19,8 @@ In this tutorial you will:
 
 ## Data
 
+[Census Tract Data](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Data/Initial_Commit.md)
+
 ## Upload data as a tileset
 
 Let's upload our data to the [tileset editor](https://studio.mapbox.com/tilesets/).  At the top of the tileset editor page, select
