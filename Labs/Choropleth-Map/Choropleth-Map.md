@@ -8,7 +8,9 @@ In this tutorial you will:
 * [Create a style](https://docs.mapbox.com/help/how-mapbox-works/map-design/#how-map-styles-work) for a basemap.
 * [Add data](https://www.mapbox.com/help/uploads/) to a style
 * [Manage and edit layers](https://www.mapbox.com/studio-manual/reference/styles/#style-editor) in your style
-* Create a web map with basic interactivity 
+* Create a web map 
+* Adding a legend 
+* Adding basic interactivity to your map 
 
 ## Software requirements
 
@@ -113,9 +115,6 @@ Hooray! Your style is now published! If you go back to your Styles page, you wil
 
 You can use your ‘Share URL’ to open your style in a new browser tab and share it with collaborators for review.
 
-
-## Create a web map 
-
 ## Create a web map 
 
 Now that we have edited our layers and created a style, let's create a web map! 
@@ -138,14 +137,106 @@ Initialize your map by copying the following code into the HTML tab of your JSFi
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
     <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
     </style>
 </head>
+<body>
+</body>
+</html>
 
 ```
 
-For the next step you will need a [Mapbox access token](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) and your [style ID](https://docs.mapbox.com/help/glossary/style-id/). 
+### Add a title, info box, and legend (front-end UI):
+
+Add the following code between the <body> opening and </body> closing tags:
+
+```
+<div id='map'></div>
+<div class='map-overlay' id='features'><h2>Rodent Incidence Rate by Census Tract</h2><div id='pd'><p>Hover over a census tract!</p></div></div>
+<div class='map-overlay' id='legend'></div>
+```
+
+Next, you will also want to apply some CSS to visualize what the layout looks like. This creates the visual rules for our front-end elements (legend, title box, information box). Under the opening <style> tag at the top of your code, add the following: 
+  
+```  
+  body {
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+h3 {
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 0.85em;
+  margin: 10px;
+  text-align: left;
+}
+
+/**
+* Create a position for the map
+* on the page */
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/**
+* Set rules for how the map overlays
+* (information box and legend) will be displayed
+* on the page. */
+
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  margin-right: 20px;
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  border-radius: 3px;
+}
+
+#features {
+  top: 0;
+  height: 100px;
+  margin-top: 20px;
+  width: 250px;
+}
+
+#legend {
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: 150px;
+  margin-bottom: 40px;
+  width: 100px;
+}
+
+.legend-key {
+  display: inline-block;
+  border-radius: 20%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+```
+
+Hit run to see your changes. 
+
+In the next step, you will add the map to your page and the project will start taking shape.
+
+### Initialize the map 
+
+For the next step you will need a [Mapbox access token](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) and your [style ID](https://docs.mapbox.com/help/glossary/style-id/). Without this, the rest of the code will not work. 
 
 <p align = "center">
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Images/Access_Token.png">
@@ -154,3 +245,134 @@ For the next step you will need a [Mapbox access token](https://docs.mapbox.com/
 <p align = "center">
 <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Images/Style_ID.gif">
 </p>
+
+Add the following code after <div class='map-over' id='legend'></div> and before the closing </body> tag
+
+```
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWpkYW5pZWxzb24iLCJhIjoiY2p2bzFlbnZ5MW5pbTN5cGJ2YWp2MW9vaiJ9.kAaZq3iyJwvrMLK7XDs_qw';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'your-style-url', // replace this with your style URL
+    center: [,], // starting position [lng, lat] - adjust the starting position to be centered on Buffalo, New York 
+    zoom: 3 // starting zoom - change the starting zoom position to 11 
+});
+</script>
+```
+
+Add your style id to the map variable. Edit the line of code that has the comment 'replace this with your style URL'.
+
+```
+style: 'your-style-url', // replace this with your style URL
+```
+
+Next, we want to center our map onto Buffalo, New York. Locate the line of code that is telling the map where to center the view. Try changing the center location by picking a new coordinate using http://geojson.io/ (or looking at the bottom of the right-hand panel in the Mapbox Studio style editor). Change the coordinates in your code and run your changes.
+
+```
+center: [,], // starting position [lng, lat] - adjust the starting position to be centered on Buffalo, New York 
+```
+
+Change the zoom level to 11.
+
+```
+zoom: 3 // starting zoom - change the starting zoom position to 11 
+```
+
+Hit run to see your changes. 
+
+<p align="center">
+  <img src="">
+</p>
+
+
+### Add additional information
+
+With some projects, this is where you'd stop: you put a map on a page! But for this map, you will add two pieces of additional information that will make the map even more useful: a legend and an information window that shows the population density for whatever state the cursor is hovering on
+
+### [The load event](https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-2/#the-load-event)
+
+```
+What is a callback?
+Initializing the map on the page does more than create a container in the map div. It also tells the browser to request the Mapbox Studio style you created in part 1. This can take variable amounts of time depending on how quickly the Mapbox server can respond to that request, and everything else you're going to add in the code relies on that style being loaded onto the map. As such, it's important to make sure the style is loaded before any more code is executed.
+
+Fortunately, the map object can tell your browser about certain events that occur when the map's state changes. One of these events is load, which is emitted when the style has been loaded onto the map. Through the map.on method, you can make sure that none of the rest of your code is executed until that event occurs by placing it in a [callback function](https://github.com/maxogden/art-of-node#callbacks) that is called when the load event occurs.
+```
+
+To make sure the rest of the code can execute, it needs to live in a callback function that is executed when the map is finished loading.
+
+Add the load event before the closing script tag </script>
+
+```
+map.on('load', function() {
+  // the rest of the code will go in here
+});
+```
+
+### [Create arrays of intervals and colors](https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-2/#create-arrays-of-intervals-and-colors)
+
+Creating a list of the stops you used when styling your layer that contains state data will allow us to add a legend to our map in a later step.
+
+Remember: this code goes inside of the load callback function!
+
+```
+var layers = ['0-112', '112-227', '227-308', '308-424', '424-577'];
+var colors = ['#edf8fb', '#b3cde3', '#8c96c6', '#8856a7', '#810f7c']; //add the colors that we used to style our choropleth map!
+```
+
+### Add a legend
+
+The following code adds a legend to the map. To do so, it iterates through the list of layers you defined above and adds a legend element for each one based on the name of the layer and its color. 
+
+```
+for (i = 0; i < layers.length; i++) {
+  var layer = layers[i];
+  var color = colors[i];
+  var item = document.createElement('div');
+  var key = document.createElement('span');
+  key.className = 'legend-key';
+  key.style.backgroundColor = color;
+
+  var value = document.createElement('span');
+  value.innerHTML = layer;
+  item.appendChild(key);
+  item.appendChild(value);
+  legend.appendChild(item);
+}
+```
+
+Hit run to see your changes. The legend box is slightly too big. Can you figure out how to adjust the height of the legend box in your code? Change the height to 100 px.
+
+
+### Add the information box 
+
+When the cursor is hovering over a census tract, the information window should show the rodent incidence information for that state. If the cursor is not hovering over a state, the information window should say, "Hover over a census tract!"
+
+To do this, add a listener for the mousemove event, identify which census tract is at the location of the cursor if any, and update the information window:
+
+```
+map.on('mousemove', function(e) {
+  var tract = map.queryRenderedFeatures(e.point, {
+    layers: ['Rodent Incidence']
+  });
+
+  if (tract.length > 0) {
+    document.getElementById('pd').innerHTML = '<h3><strong>' + tract[0].properties.Incidence + '</strong> rodent incidents</em></p>';
+  } else {
+    document.getElementById('pd').innerHTML = '<p>Hover over a census tract!</p>';
+  }
+});
+
+```
+
+### Cursor
+
+Add a single line of code to give the map the default pointer cursor.
+
+map.getCanvas().style.cursor = 'default';
+
+## Mission complete
+
+You have created an interactive choropleth map!
+
+Final JSFiddle Code can be [here](https://jsfiddle.net/mjdanielson/6qvroucn/37/).
+
