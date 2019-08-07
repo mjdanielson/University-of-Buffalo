@@ -18,7 +18,7 @@ In this tutorial you will:
 * Mapbox account
 * QGIS
 * Text editor 
-* GitHub Account
+* JSFiddle 
 
 ## Data
 * [Council District GeoJSON](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Data/Council%20Districts.geojson)
@@ -136,11 +136,11 @@ When you upload vector data to your Mapbox account, our servers convert it to a 
 
   ## Create a style for a basemap
   
-After you've inspected your data, it's time to create a new style so you can put it on the map! Go to your [Styles page](https://studio.mapbox.com/). Click the <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/New_Style.png" width="82" height="26" title="New Style"> button. Find the Basic Template style and click <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Customize_Light.png" width="82" height="26" title="Customize Style">.
+After you've inspected your data, it's time to create a new style so you can put it on the map! Go to your [Styles page](https://studio.mapbox.com/). Click the <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/New_Style.png" width="82" height="26" title="New Style"> button. Find the Light Template style and click <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Customize_Light.png" width="82" height="26" title="Customize Style">.
 
 Excellent! Welcome to the Mapbox Studio style editor. This is where you will create your map style!
 
-Rename the style so that you can find it later. Click into the title field in the upper left side of the screen to change the title from Basic Template to __Graduated_Points__.  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/New_Style.png" width="82" height="26" title="New Style"> button. Find the Basic Template style and click 
+Rename the style so that you can find it later. Click into the title field in the upper left side of the screen to change the title from Basic Template to __Graduated_Points__.  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/New_Style.png" width="82" height="26" title="New Style"> button. 
 
 <p align="center">
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Rename.png" title="Rename"> 
