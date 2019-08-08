@@ -153,7 +153,7 @@ Add the following code between the <body> opening and </body> closing tags:
 
 ```
 <div id='map'></div>
-<div class='map-overlay' id='features'><h2>Rodent Incidence Rate by Census Tract</h2><div id='pd'><p>Hover over a census tract!</p></div></div>
+<div class='map-overlay' id='features'><h2>Rodent Incidence by Census Tract</h2><div id='pd'><p>Hover over a census tract!</p></div></div>
 <div class='map-overlay' id='legend'></div>
 ```
 
