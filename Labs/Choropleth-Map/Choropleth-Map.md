@@ -149,7 +149,7 @@ Initialize your map by copying the following code into the HTML tab of your JSFi
 
 ### Add a title, info box, and legend (front-end UI):
 
-Add the following code between the <body> opening and </body> closing tags:
+Add the following code between the ```<body>``` opening and ```</body>``` closing tags:
 
 ```
 <div id='map'></div>
@@ -218,7 +218,7 @@ p {
   padding: 10px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   line-height: 18px;
-  height: 150px;
+  height: 100px;
   margin-bottom: 40px;
   width: 100px;
 }
@@ -248,7 +248,7 @@ For the next step you will need a [Mapbox access token](https://docs.mapbox.com/
 <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Images/Style_ID.gif">
 </p>
 
-Add the following code after <div class='map-over' id='legend'></div> and before the closing </body> tag
+Add the following code after ```<div class='map-over' id='legend'></div>``` and before the closing ```</body>``` tag
 
 ```
 <script>
@@ -301,7 +301,7 @@ Fortunately, the map object can tell your browser about certain events that occu
 
 To make sure the rest of the code can execute, it needs to live in a callback function that is executed when the map is finished loading.
 
-Add the load event before the closing script tag </script>
+Add the load event before the closing script tag ```</script>``` -- __The rest of your code will go inside of the load callback function.__
 
 ```
 map.on('load', function() {
@@ -313,7 +313,7 @@ map.on('load', function() {
 
 Creating a list of the stops you used when styling your layer that contains state data will allow us to add a legend to our map in a later step.
 
-Remember: this code goes inside of the load callback function!
+__Remember: this code goes inside of the load callback function!__
 
 ```
 var layers = ['0-112', '112-227', '227-308', '308-424', '424-577'];
@@ -347,6 +347,32 @@ Hit run to see your changes. The legend box is slightly too big. Can you figure 
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Images/Map_legend.png">
  </p>
 
+Your code should look like this:
+
+```
+map.on('load', function() {
+  // the rest of the code will go in here
+var layers = ['0-112', '112-227', '227-308', '308-424', '424-577'];
+var colors = ['#edf8fb', '#b3cde3', '#8c96c6', '#8856a7', '#810f7c']; //add the colors that we used to style our choropleth map!
+
+for (i = 0; i < layers.length; i++) {
+  var layer = layers[i];
+  var color = colors[i];
+  var item = document.createElement('div');
+  var key = document.createElement('span');
+  key.className = 'legend-key';
+  key.style.backgroundColor = color;
+
+  var value = document.createElement('span');
+  value.innerHTML = layer;
+  item.appendChild(key);
+  item.appendChild(value);
+  legend.appendChild(item);
+}
+});
+
+````
+
 ### Add the information box 
 
 When the cursor is hovering over a census tract, the information window should show the rodent incidence information for that state. If the cursor is not hovering over a state, the information window should say, "Hover over a census tract!"
@@ -355,12 +381,12 @@ To do this, add a listener for the mousemove event, identify which census tract 
 
 ```
 map.on('mousemove', function(e) {
-  var tract = map.queryRenderedFeatures(e.point, {
+  var tracts = map.queryRenderedFeatures(e.point, {
     layers: ['Rodent Incidence']
   });
 
-  if (tract.length > 0) {
-    document.getElementById('pd').innerHTML = '<h3><strong>' + tract[0].properties.Incidence + '</strong> rodent incidents</em></p>';
+  if (tracts.length > 0) {
+    document.getElementById('pd').innerHTML = '<h3><strong>' + tracts[0].properties.Incidence + '</strong></h3><p><strong><em>';
   } else {
     document.getElementById('pd').innerHTML = '<p>Hover over a census tract!</p>';
   }
@@ -372,7 +398,7 @@ map.on('mousemove', function(e) {
 
 Add a single line of code to give the map the default pointer cursor.
 
-map.getCanvas().style.cursor = 'default';
+```map.getCanvas().style.cursor = 'default';```
 
 ## Mission complete
 
