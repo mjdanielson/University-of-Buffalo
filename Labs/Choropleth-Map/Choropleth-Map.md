@@ -408,5 +408,5 @@ You have created an interactive choropleth map!
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Images/final_map.png">
  </p>
 
-Final JSFiddle Code can be [here](https://jsfiddle.net/mjdanielson/6qvroucn/37/).
+The final code can be [here](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/index.html).
 
