@@ -43,7 +43,7 @@ Explore your dataset by clicking on different polygons. What property values to 
 
 <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Council_Districts_Select.gif">
 
-Notice that there are multiple polygons with the same name - there are two polygons for district council 'North', two for 'Niagara' amd 4 polygon features for 'Lovejoy'. Before we continue with this exercise, we need to merge our polygon features. Let's start by selecting both of the 'North' district council polygons. Hold down the shift button to select both features at once. With both features selected, click on the __Combine features into multifeature__ button.
+Notice that there are multiple polygons with the same name - there are two polygons for district council 'North', two for 'Niagara' amd 4 polygon features for 'Lovejoy'. Before we continue with this exercise, we need to merge our polygon features. Let's start by selecting both of the 'North' district council polygons. Hold down the shift button to select both features at once. With both features selected, click on the __Combine features into multifeature__ button <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Merge_Icon.png">.
 
 <p align="center">
   <img src= "https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Multifeatures.png">
@@ -85,7 +85,7 @@ Repeat these steps for each council district.
 
 Once you are finished, select __save__ and return to the [dataset editor homepage](https://studio.mapbox.com/datasets/).
 
-Our final map for this tutorial is going to be a graduated point map of rodent incidence rates by council district. In order to creat this map, we will need to create centroid points for each of the polygon features. We will use QGIS to create the centroid points. 
+Our final map for this tutorial is going to be a graduated point map of rodent incidence rates by council district. In order to create this map, we will need to create centroid points for each of the polygon features. We will use QGIS to create the centroid points. 
 
 Download your edited dataset as a GeoJSON by clicking on the <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Symbol.png"> button and selecting download. 
 
@@ -97,7 +97,7 @@ Download your edited dataset as a GeoJSON by clicking on the <img src="https://g
 
 Open QGIS and add the Council District GeoJSON that you just downloaded as a vector layer to your map. 
 
-Use the __Processing Toolbox__ search bar to find the Vector geometry __Centroids__ tool. This tool creates a new point layer, with points representing the centroid of the geometries in an input layer. Make sure that your __Council_Districts__ layer is selected as the input layer and hit __run__.
+Use the __Processing Toolbox__ search bar (here's a link on how to install the [processing toolbox](https://www.youtube.com/watch?v=u8CZgiR8I00) if you don't currently have this installed) to find the Vector geometry __Centroids__ tool. This tool creates a new point layer, with points representing the centroid of the geometries in an input layer. Make sure that your __Council_Districts__ layer is selected as the input layer and hit __run__.
 
 <p align = "center">
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Centroid_Tool.png" width="754" height="454" title="QGIS">
@@ -105,7 +105,7 @@ Use the __Processing Toolbox__ search bar to find the Vector geometry __Centroid
 
 Right click on the layer and select __Export__ --> __Save Feature As__ and export your file as a GeoJSON. 
 
-We have now successfully created a point feature from our polygon file! There is still one more pre-processing step that we need to do before we can style our data in Mapbox Studio. A common error that occurs when uploading GeoJSON data to Mapbox is that the GeoJSON contains an old-style CRS attribute. To prevent this error, open your GeoJSON in a text editor (for this example, we will be using Atom). Delete the CRS attribute from your code and save your edits. For more information about common data uploading errors check out this helpful [documentation](https://docs.mapbox.com/help/troubleshooting/uploads/).
+We have now successfully created a point feature from our polygon file! There is still one more pre-processing step that we need to do before we can style our data in Mapbox Studio. A common error that occurs when uploading GeoJSON data to Mapbox is that the GeoJSON contains an old-style CRS attribute. To prevent this error, open your GeoJSON in a text editor (for this example, we will be using Brackets). Delete the CRS attribute from your code and save your edits. For more information about common data uploading errors check out this helpful [documentation](https://docs.mapbox.com/help/troubleshooting/uploads/).
 
 <p align = "center">
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Text_Editing.png" title="Text Editing">
@@ -140,7 +140,7 @@ After you've inspected your data, it's time to create a new style so you can put
 
 Excellent! Welcome to the Mapbox Studio style editor. This is where you will create your map style!
 
-Rename the style so that you can find it later. Click into the title field in the upper left side of the screen to change the title from Basic Template to __Graduated_Points__.  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/New_Style.png" width="82" height="26" title="New Style"> button. 
+Rename the style so that you can find it later. Click into the title field in the upper left side of the screen to change the title from Light Template to __Graduated_Points__.  <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/New_Style.png" width="82" height="26" title="New Style"> button. 
 
 <p align="center">
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Rename.png" title="Rename"> 
