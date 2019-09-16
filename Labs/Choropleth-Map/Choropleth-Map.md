@@ -68,7 +68,7 @@ Each layer in Studio can be styled individually by clicking on the name of the l
 
 Click the Style tab and the map will switch back to style mode displaying your new layer. You will see the polygon data on the map with a default style (black with 100% opacity). 
 
-In the Mapbox Studio style editor, you can assign a color to each state based on its number of rodent incidents in a census tract. Change the name of your data layer to 'Rodent Incidents' and select __color__ ,  __style across a data range__ and then select the __incidence #__ field.
+In the Mapbox Studio style editor, you can assign a color to each tract based on its number of rodent incidents in a census tract. Change the name of your data layer to 'Rodent Incidents' and select __color__ ,  __style across a data range__ and then select the __incidence #__ field.
 
 <p align = "center">
   <img src= "https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Images/Rename_Layer.gif">
@@ -76,7 +76,7 @@ In the Mapbox Studio style editor, you can assign a color to each state based on
 
 The rate of change is set to __Linear__. Click Edit and select __Step__ instead. Click Done. Since you have set the rate of change to step, the colors for each range of density between stops will be uniform.
 
-Now it's time to start adding stops and colors! You will create several stops to break states up into groups with similar overdose rates. We will be breaking the data out into 5 classes using the [Jenks natural breaks](https://en.wikipedia.org/wiki/Jenks_natural_breaks_optimization) method. 
+Now it's time to start adding stops and colors! You will create several stops to break tracts up into groups with similar overdose rates. We will be breaking the data out into 5 classes using the [Jenks natural breaks](https://en.wikipedia.org/wiki/Jenks_natural_breaks_optimization) method. 
 
 | Incidence Bins   |  Color   |
 |------------------|----------|
@@ -136,8 +136,8 @@ Initialize your map by copying the following code into the HTML tab of your JSFi
     <meta charset='utf-8' />
     <title>Choropleth Map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
     <style>
     </style>
 </head>
@@ -289,7 +289,7 @@ Hit run to see your changes.
 
 ### Add additional information
 
-With some projects, this is where you'd stop: you put a map on a page! But for this map, you will add two pieces of additional information that will make the map even more useful: a legend and an information window that shows the population density for whatever state the cursor is hovering on
+With some projects, this is where you'd stop: you put a map on a page! But for this map, you will add two pieces of additional information that will make the map even more useful: a legend and an information window that shows the population density for whatever tract the cursor is hovering on
 
 ### [The load event](https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-2/#the-load-event)
 
@@ -297,7 +297,7 @@ What is a callback?
 
 Initializing the map on the page does more than create a container in the map div. It also tells the browser to request the Mapbox Studio style you created in part 1. This can take variable amounts of time depending on how quickly the Mapbox server can respond to that request, and everything else you're going to add in the code relies on that style being loaded onto the map. As such, it's important to make sure the style is loaded before any more code is executed.
 
-Fortunately, the map object can tell your browser about certain events that occur when the map's state changes. One of these events is load, which is emitted when the style has been loaded onto the map. Through the map.on method, you can make sure that none of the rest of your code is executed until that event occurs by placing it in a [callback function](https://github.com/maxogden/art-of-node#callbacks) that is called when the load event occurs.
+Fortunately, the map object can tell your browser about certain events that occur when the map's tract changes. One of these events is load, which is emitted when the style has been loaded onto the map. Through the map.on method, you can make sure that none of the rest of your code is executed until that event occurs by placing it in a [callback function](https://github.com/maxogden/art-of-node#callbacks) that is called when the load event occurs.
 
 To make sure the rest of the code can execute, it needs to live in a callback function that is executed when the map is finished loading.
 
@@ -311,7 +311,7 @@ map.on('load', function() {
 
 ### [Create arrays of intervals and colors](https://docs.mapbox.com/help/tutorials/choropleth-studio-gl-pt-2/#create-arrays-of-intervals-and-colors)
 
-Creating a list of the stops you used when styling your layer that contains state data will allow us to add a legend to our map in a later step.
+Creating a list of the stops you used when styling your layer that contains tract data will allow us to add a legend to our map in a later step.
 
 __Remember: this code goes inside of the load callback function!__
 
@@ -375,7 +375,7 @@ for (i = 0; i < layers.length; i++) {
 
 ### Add the information box 
 
-When the cursor is hovering over a census tract, the information window should show the rodent incidence information for that state. If the cursor is not hovering over a state, the information window should say, "Hover over a census tract!"
+When the cursor is hovering over a census tract, the information window should show the rodent incidence information for that tract. If the cursor is not hovering over a tract, the information window should say, "Hover over a census tract!"
 
 To do this, add a listener for the mousemove event, identify which census tract is at the location of the cursor if any, and update the information window:
 
