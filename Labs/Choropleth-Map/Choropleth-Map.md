@@ -19,7 +19,7 @@ In this tutorial you will:
 
 ## Data
 
-[Census Tract Data](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Data/Initial_Commit.md)
+[Census Tract Data](https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Choropleth-Map/Data/Census_Tracts.geojson)
 
 ## Upload data as a tileset
 
