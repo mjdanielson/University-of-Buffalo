@@ -186,10 +186,10 @@ Once you are satisfied with how your point data looks, let's add some geographic
   <img src="https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Council_DIstricts_Layer.png" title = 'council district boundary layer'>
 </p>
 
-Change the color of the layer to 'no color' and adjust the opacity to 75%. 
+Change the color of the layer to '#000000. Next, adjust the stroke color to match the image below: 
 
 <p align = "center">
-  <img src = "https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Boundary_Layer.png" title = 'boundary layer settings'>
+  <img src = "https://github.com/mjdanielson/University-of-Buffalo/blob/master/Labs/Graduated-Points/Images/Stroke_Box.png" title = 'boundary layer settings'>
 </p>
 
 
